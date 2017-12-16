@@ -1,0 +1,46 @@
+// Special styling for sticky posts.
+
+@media screen and ( min-width: 640px ) {
+
+	.entry {
+
+		&--sticky {
+			position      : relative;
+			margin-bottom : 2.25rem;
+		}
+
+		&--sticky &__header {
+			position   : absolute;
+			bottom     : 2.5rem;
+			width      : 100%;
+			margin     : 0;
+			padding    : 0.75rem 1.5rem;
+			background : rgba( 0, 0, 0, 0.5 );
+			box-sizing : border-box;
+		}
+
+		&--sticky &__title {
+			font-size     : 2rem;
+			display       : block; /* can't use inline or inline-block */
+			overflow      : hidden;
+			white-space   : nowrap;
+			text-overflow : ellipsis;
+		}
+
+		&--sticky &__title,
+		&--sticky &__byline {
+			color : $color_white;
+
+			a {
+				color : $color_white;
+				border-bottom : 1px solid transparent;
+
+				&:hover,
+				&:focus {
+					color : $color_white;
+					border-bottom-color : $color_white;
+				}
+			}
+		}
+	}
+}

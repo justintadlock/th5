@@ -1,0 +1,59 @@
+// Code.
+
+pre,
+code {
+	direction   : ltr;
+	text-align  : left;
+	font-family : $font_code;
+	color       : $blue_matisse;
+}
+
+code {
+	padding    : .125em .25em;
+    	font-size  : 0.9375rem;
+	background : rgba( 214, 224, 231, 0.25 );
+}
+
+pre {
+	overflow      : auto;
+	word-wrap     : normal;
+	margin-bottom : 1.5rem;
+	padding       : 30px 24px;
+	font-size     : 15px;
+	line-height   : 30px;
+	border        : 1px solid $gray_zumthor;
+	box-sizing    : border-box;
+
+	@include linear-gradient-bg(
+		to bottom,
+		rgba( 255, 255, 255, 0.5 ) 29px,
+		#e7ecf0 30px,
+		rgba( 214, 224, 231, 0.25 ) 59px,
+		#e7ecf0 60px
+	);
+
+	@include background-size( 60px 60px );
+
+	code {
+		padding    : 0;
+		font-size  : 1em;
+		background : transparent;
+		border     : none;
+	}
+
+	.line-numbers {
+		display      : block;
+		float        : left;
+		height       : calc( 100% + 48px );
+		margin       : -30px 24px -30px -24px;
+		padding      : 30px 24px;
+		font-size    : 13px;
+		text-align   : right;
+		background   : rgba( 255, 255, 255, 0.25 );
+		border-right : 1px solid rgba( 214, 224, 231, 0.75 );
+		color        : rgba( 61, 98, 125, 0.625 );
+
+		// Individual line numbers.
+		span { display : block; }
+	}
+}

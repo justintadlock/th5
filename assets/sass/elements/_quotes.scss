@@ -1,0 +1,53 @@
+// Quotes.
+
+blockquote {
+	margin     : 0 1.5rem;
+	font-size  :  1.125rem;
+	font-style : italic;
+
+	i,
+	em,
+	cite { font-style : normal; }
+
+	cite,
+	footer { font-family : $font_secondary; }
+
+	&.alignfull {
+		margin-top    : 1.5rem;
+		margin-bottom : 3rem;
+		padding       : 3rem 0 1.5rem;
+		font-family   : $font_tertiary;
+		font-size     : 1.5rem;
+		font-style    : italic;
+		text-align    : center;
+		color         : $color_quote_full;
+		background    : $bg_light;
+		border-top    : 1px solid;
+		border-bottom : 1px solid;
+		border-color  : rgba( 206, 211, 214, 0.5 );
+
+		p,
+		header,
+		footer {
+			margin    : 0 1.5rem 1.5rem;
+			max-width : 950px;
+
+			@media only screen and ( min-width: 950px ) { margin: 0 auto 1.5rem; }
+		}
+
+		footer {
+			text-transform : uppercase;
+			font-size      : 1.125rem;
+		}
+	}
+
+	footer img {
+		margin        : 0 auto 0.75rem;
+		display       : block;
+		width         : 125px;
+		border-radius : 50%;
+	}
+}
+
+// Inline quotes.
+.en-us q { quotes : '\201C' '\201D' '\2018' '\2019'; }

@@ -1,0 +1,54 @@
+// Breadcrumbs from the Breadcrumb Trail plugin.
+
+// Wrapper.
+.breadcrumbs {
+	@extend %meta;
+	padding    : 0.75rem 1.5rem 0;
+	word-wrap  : break-word;
+	word-break : normal;
+
+	@media only screen and ( max-width : 950px ) {
+		text-align : center;
+
+		.single-topic & .trail-end { display : none; }
+	}
+
+	// The breadcrumb list.
+	&__items {
+		list-style : none;
+		margin     : 0;
+		font-size  :  14px;
+	}
+
+	// Individual item.
+	&__item {
+		display     : inline;
+		margin-left :  0.75rem;
+
+		&:first-of-type { margin-left  : 0; }
+		&:last-of-type  { margin-right : 0; }
+
+		&::before {
+			content      : "\00b7";
+			margin-right : 0.75rem;
+		}
+
+		&:first-of-type::before { display: none; }
+	}
+
+	// Home item.
+	a[rel="home"] {
+
+		&::before {
+			@extend %icon;
+			content    : "\f015";
+			margin-top : -3px;
+		}
+
+		span {
+			position : absolute;
+			top      : -9999em;
+			left     : -9999em;
+		}
+	}
+}

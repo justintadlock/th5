@@ -1,0 +1,13 @@
+// Defines the general transition that we'll use throughout the theme.
+%transition {
+	@include transition( all 0.5s ease-in-out );
+}
+
+// Basic clearfix for clearing floats.
+%clearfix {
+	content    : ".";
+	display    : block;
+	height     : 0;
+	clear      : both;
+	visibility : hidden;
+}

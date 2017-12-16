@@ -1,0 +1,98 @@
+/**
+ * Club signup table.
+ */
+table.signup {
+	width  : calc( 100% + 3rem );
+	margin : 0 -1.5rem 3rem;
+	color  : $gray_jumbo;
+}
+
+	.signup thead,
+	.signup th,
+	.signup td { border: none; }
+
+	.signup thead th {
+		text-transform: uppercase;
+		font-size:      0.9375rem;
+	}
+
+	.signup td { padding: 0.75rem 1.5rem; }
+
+	.signup th,
+	.signup td:not(:first-child) {
+		padding-left:  0.3125rem;
+		padding-right: 0.3125rem;
+		text-align:    center;
+	}
+
+	.signup tr:nth-child( even ) {
+		background    : rgba( 214, 224, 231, 0.25 );
+		border-top    : 1px solid;
+		border-bottom : 1px solid;
+		border-color  : rgba( 206, 211, 214, 0.5 );
+	}
+
+	.signup tbody { font-size: 1.0625rem; }
+
+	.signup .fa-check { color : $blue_matisse; }
+
+	.signup .fa-times { color: #B2BAC5; }
+
+	.signup .button {
+		width:       auto;
+		margin:      0;
+		padding:     0.75rem 1.75rem;
+		font-size:   0.9375rem;
+		line-height: 0.9375rem;
+	}
+
+.signup + p { text-align: center; }
+
+// Mobile handling of the table.
+@media only screen and ( max-width : 580px ) {
+
+	.signup {
+
+		%columns {
+			float   : left;
+			display : inline-block;
+			width   : calc( 100% / 3 );
+		}
+
+		tr {
+			display  : block;
+			clear    : both;
+			overflow : hidden;
+
+			&:nth-child( even ) {
+				background : transparent;
+				border     : none;
+			}
+		}
+
+		thead th,
+		tfoot td { @extend %columns }
+
+		tbody td:first-of-type {
+			display : block;
+			width   : 100%;
+			text-align : center;
+		}
+
+		tbody td:not(:first-of-type) {
+			@extend %columns;
+			background    : rgba( 214, 224, 231, 0.25 );
+			border-top    : 1px solid;
+			border-bottom : 1px solid;
+			border-color  : rgba( 206, 211, 214, 0.5 );
+		}
+
+		tbody td:nth-of-type( 3n ) {
+			border-left  : 1px solid #e7ecf0;
+			border-right : 1px solid #e7ecf0;
+		}
+
+		th:empty,
+		td:empty { display : none; }
+	}
+}

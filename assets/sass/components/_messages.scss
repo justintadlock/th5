@@ -1,0 +1,35 @@
+/**
+ * Message boxes.
+ */
+
+ %message {
+	position    : relative;
+	width       : calc( 100% + 3rem );
+	margin-left : -1.5rem;
+	padding     : 1.5rem;
+	font-family : $font_tertiary;
+	font-size   : 1.325rem;
+	font-style  : italic;
+
+	box-sizing  : border-box;
+}
+
+// `.note` is for back-compat.  All future messages should be in the form of
+// `.message` + `.message-$type`.
+.message,
+.note { @extend %message; }
+
+.message-note,
+.note {
+	 color      : #b2bac5;
+	 background : $color_dark;
+
+	a {
+		color : $color_white;
+
+		&:hover,
+		&:focus {
+			border-color : $color_white;
+		}
+	}
+}

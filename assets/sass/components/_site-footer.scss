@@ -1,0 +1,20 @@
+/* === Footer === */
+
+.site-footer {
+	margin        : 0;
+	padding       : 1.5rem 0 0;
+	font-family   : $font_secondary;
+	font-size     : 1rem;
+	text-align    : center;
+	color         : $color_footer;
+	background    : rgba( 214, 224, 231, 0.25 );
+	border-top    : 1px solid $border_footer;
+	border-bottom : 1px solid $border_footer;
+
+	&__wrap {
+		max-width  : 880px;
+		margin     : 0 auto;
+		padding    : 0 1.5rem;
+		box-sizing : border-box;
+	}
+}

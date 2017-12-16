@@ -1,0 +1,25 @@
+// Links.
+a {
+	@extend %transition;
+
+	color           : $color_dark;
+	border-bottom   : 1px solid rgba( 192, 203, 209, 0.75 );
+	text-decoration : none;
+
+	&:hover,
+	&:focus {
+		text-decoration     : none;
+		border-bottom-color : $color_dark;
+	}
+}
+
+// Links that wrap an image.
+a.has-image,
+a.has-svg {
+	position: relative;
+	display:  block;
+	border:   none;
+}
+
+// When hovering a linked time element.
+a:hover time { cursor : pointer; }

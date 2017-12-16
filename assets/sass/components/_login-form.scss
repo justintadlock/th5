@@ -1,0 +1,23 @@
+// Login form.
+
+.singular .login-wrap {
+	margin-left:  calc( -100vw / 2 + 100% / 2 );
+	margin-right: calc( -100vw / 2 + 100% / 2 );
+	max-width:    100vw;
+		margin-top    : 1.5rem;
+		margin-bottom: 3rem;
+		padding:       3rem 1.5rem 1.5rem;
+		font-family:   $font_tertiary;
+		//color:         $color_quote_full;
+		background:    $bg_light;
+		border-top    : 1px solid;
+		border-bottom : 1px solid;
+		border-color  : rgba( 206, 211, 214, 0.5 );
+		box-sizing    : border-box;
+
+	form {
+		width      : 100%;
+		max-width  : 700px;
+		margin     : 0 auto;
+	}
+}

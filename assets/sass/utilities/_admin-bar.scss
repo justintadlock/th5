@@ -1,0 +1,15 @@
+// Admin bar styles.
+
+@media screen and ( min-width : 783px ) {
+
+	html.has-admin-bar { margin-top : 32px; }
+
+	* html.has-admin-bar body { margin-top : 32px; }
+}
+
+@media screen and ( max-width: 782px ) {
+
+	html.has-admin-bar { margin-top : 46px; }
+
+	* html.has-admin-bar body { margin-top : 46px; }
+}

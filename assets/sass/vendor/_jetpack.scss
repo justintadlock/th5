@@ -1,0 +1,14 @@
+// Jetpack integration.
+
+// Jetpack/Grunion contact form.
+
+.contact-form {
+
+	> div {
+		margin-bottom: 1.33em;
+	}
+
+	input[type="submit"] { width : 100%; }
+
+	textarea { max-height : 200px; }
+}

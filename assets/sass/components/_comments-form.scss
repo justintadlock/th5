@@ -1,0 +1,76 @@
+/**
+ * Comment respond form area.
+ */
+
+#cancel-comment-reply-link {
+	position     : absolute;
+	top          : 0;
+	right        : 0;
+	text-shadow  : none;
+	background   : none;
+	border       : none;
+
+	&::after {
+		@extend %icon;
+		content    : '\f00d';
+		padding    : 10px 12px;
+		font-size  : 14px;
+		color      : $white;
+		background : $blue_matisse;
+	}
+
+	&:focus::after,
+	&:hover::after { background : $blue_jellybean; }
+}
+
+// Comment form.
+	.comments-closed,
+	.comment-respond .logged-in-as,
+	.comment-respond .must-log-in,
+	.comment-notes {
+		text-align : center;
+		font-size  : 15px;
+		color      : $gray_jumbo;
+	}
+
+	.comment-respond .required {
+		font-size   : 1.125em;
+		font-weight : bold;
+		color       : $blue_matisse;
+	}
+
+	.comment-respond label[for="author"]::before,
+	.comment-respond label[for="email"]::before,
+	.comment-respond label[for="url"]::before,
+	.comment-respond label[for="comment"]::before {
+		@extend %icon;
+		margin-bottom : 3px;
+		padding       : 0 8px;
+	}
+
+	.comment-respond label[for="author"]::before  { content : '\f007'; }
+	.comment-respond label[for="email"]::before   { content : '\f0e0'; }
+	.comment-respond label[for="url"]::before     { content : '\f0ac'; }
+	.comment-respond label[for="comment"]::before { content : '\f075'; }
+
+	// Form inputs.
+	@media screen and ( min-width: 641px ) {
+
+		.comment-form-author,
+		.comment-form-email {
+			width      : 50%;
+			box-sizing : border-box;
+		}
+
+		.comment-form-author {
+			float         : left;
+			padding-right : 0.75rem;
+		}
+
+		.comment-form-email {
+			float        : right;
+			padding-left : 0.75rem;
+		}
+	}
+
+	.comment-form-submit { width : 100%; }

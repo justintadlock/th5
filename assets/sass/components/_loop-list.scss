@@ -1,0 +1,132 @@
+.mb-loop,
+.loop-list {
+	list-style    : none;
+	width         : 100%;
+	max-width     : calc( 700px + 3rem );
+	margin        : 0 auto 3rem;
+	border        : 1px solid $border_footer;
+
+	@media only screen and ( max-width: 480px ) {
+		width:              calc( 100% + 3rem );
+		border-left-width:  0;
+		border-right-width: 0;
+		margin-left: -1.5rem;
+	}
+
+	ul {
+		list-style : none;
+		margin     : 0;
+	}
+
+	li { padding : 1.5rem; }
+
+	li:nth-child( even ) {
+		background    : rgba( 214, 224, 231, 0.25 );
+		border-top    : 1px solid;
+		border-bottom : 1px solid;
+		border-color  : $border_footer;
+	}
+
+	li:last-child { border-bottom : none; }
+
+	.list-title,
+	li > .mb-forum-link,
+	li > .mb-topic-link,
+	li > .mb-reply-link,
+ 	li > .mb-user-link,
+ 	li > .mb-role-link {
+		font-family : $font_secondary;
+		font-weight : 700;
+		font-size   : 1.125rem;
+		border-color : transparent;
+
+		&:hover,
+		&:focus { color : $color_dark; border-color: $color_dark; }
+	}
+
+	li.topic-sticky {
+		box-sizing: border-box;
+		background   : $color_dark;
+		border-color : rgba( 255, 255, 255, 0.1 );
+
+		@media only screen and ( min-width : 481px ) {
+			width: calc( 100% + 2px );
+			margin-left: -1px;
+		}
+
+		.mb-topic-link,
+		.mb-list-meta {
+			color : $color_white;
+		}
+
+		.mb-list-meta a { border-color : rgba( 255, 255, 255, 0.15 ); }
+
+		a:hover,
+		a:focus {
+			color : $color_white;
+			border-color : rgba( 255, 255, 255, 0.5 );
+		}
+	}
+
+	p { margin : 0; }
+
+	.avatar {
+		float: left;
+		    width: 50px;
+		    border-radius: 50%;
+		    margin: 0 1.5rem 0 0;
+	}
+}
+
+.mb-loop-forum-hier {
+
+	li ul {
+		list-style-type : square;
+		list-style-position : inside;
+		width      : calc( 100% + 3rem );
+		margin     : 0.75rem 0 -0.75rem -1.5rem;
+	}
+
+	li {
+		padding : 0.75rem 1.5rem;
+	}
+
+	li li {
+		.mb-forum-link { font-size : 1.0625rem; }
+
+		.count { font-size : 15px; color : $color_content_light; }
+	}
+
+	li:nth-child( even ) { background : none; }
+
+	li li:nth-child( odd ) {
+		background    : rgba( 214, 224, 231, 0.25 );
+		border-top    : 1px solid;
+		border-bottom : 1px solid;
+		border-color  : $border_footer;
+ 	}
+	li li:nth-child( even ) { background : none; border : none; }
+
+	li li:last-child { border-bottom : none; }
+}
+
+.mb-loop-title {
+	margin : 0;
+	padding : 1.5rem;
+	text-align : center;
+	border-bottom : 1px solid $border_footer;
+}
+
+.list-meta,
+.mb-list-meta {
+	@extend %meta;
+	margin-top: 0.25rem;
+	font-size: 15px;
+}
+
+.topic-labels {
+	display: inline-block;
+    margin-right: 0.75rem;
+    font-style: italic;
+    opacity: 0.5;
+}

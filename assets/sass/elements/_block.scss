@@ -1,0 +1,49 @@
+// Block-level elements that don't have a more-specific folder.
+
+// Top-level.  All HTML.
+html {
+	font-family : $font_primary;
+	font-size   : 14px;
+	color       : $gray_ironside;
+
+	@media only screen and ( min-width: 540px ) { font-size : 15px; }
+
+	@media only screen and ( min-width: 768px ) { font-size : 16px; }
+}
+
+// Body of document.
+body {
+	overflow-x : hidden;
+	background : $gray_alabaster;
+}
+
+
+// Paragraphs.
+p {
+	font-size     : 1em;
+ 	line-height   : 1.45;
+	margin-bottom : 1.3em;
+
+	&:empty {
+		margin      : 0;
+		padding     : 0;
+		line-height : 0;
+	}
+}
+
+// Horizontal rules.
+hr {
+	@include linear-gradient-bg(
+		to right, rgba( $blue_heather, 0 ), rgba( $blue_heather, 0.75 ), rgba( $blue_heather, 0 )
+	);
+	height:        1px;
+	margin-bottom: 1.3em;
+	border:        none;
+}
+
+/* === Address === */
+
+address {
+	font-style: italic;
+	margin:     0 0 1.5rem;
+}

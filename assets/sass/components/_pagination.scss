@@ -1,0 +1,61 @@
+// Pagination on multi-post pages.
+
+.pagination {
+	clear       : both;
+	overflow    : hidden;
+	padding     : 1.5rem 0 0;
+	text-align  : center;
+	font-family : $font_secondary;
+	font-size   : 15px;
+
+	// Move up when in the forums.
+	.mb & { margin-top : -1.5rem; }
+
+	// Pagination title (sometimes wrapped in screen-reader-text).
+	&__title {
+		display      : inline-block;
+		margin-right : 0 0.75rem 0 0;
+		font         : inherit;
+	}
+
+	// List of items.
+	&__items {
+		list-style  : none;
+		display    : inline-block;
+		margin  : 0 0 1.5rem;
+
+		// Get rid of whitespace between inline-block elements.
+		font-size   : 0px;
+	}
+
+	// Individual list item.
+	&__item {
+		display     : inline-block;
+		margin      : 0 -1px 0 0;
+		font-size   : 15px;
+	}
+
+	// Links/spans within the pagination item.
+	&__anchor {
+		display : block;
+		padding : 0.625rem 1.25rem;
+		border  : 1px solid $gray_zumthor;
+
+		&--link:hover,
+		&--link:focus,
+		&--current {
+			color        : $white;
+			background   : $blue_matisse;
+			border-color : $blue_matisse;
+		}
+	}
+
+	// Hide the pagination while leaving prev/next on small screens.
+	@media only screen and ( max-width: 640px ) {
+
+		&__item { display: none; }
+
+		&__item--prev,
+		&__item--next { display: inline-block; }
+	}
+}

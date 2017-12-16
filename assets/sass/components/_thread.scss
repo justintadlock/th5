@@ -1,0 +1,98 @@
+/**
+ * A thread is a list of posts, comments, etc. of discussion.  This
+ * component is primarily used for the comments list and forum topics.
+ */
+
+// Wrapper element.
+.thread {
+	position      : relative;
+	margin-bottom : 3rem;
+	border        : 1px solid $border_footer;
+	border-top    : none;
+
+	&--forum-topic {
+		width     : 100%;
+		max-width : calc( 700px + 3rem );
+		margin    : 0 auto 3rem;
+	}
+
+	@media only screen and ( max-width: 480px ) {
+		width              : calc( 100% + 3rem );
+		margin-left        : -1.5rem;
+		border-left-width  : 0;
+		border-right-width : 0;
+	}
+
+	// Title/heading for the thread (e.g., comments number).
+	&__title {
+		margin        : 0;
+		padding       : 1.5rem;
+		font-size     : 22px;
+		border-top    : 1px solid $border_footer;
+		text-align    : center;
+	}
+
+	// The list of items in the thread.
+	&__items {
+		list-style : none;
+		margin     : 0;
+		font-size  : 17px;
+
+		// All child lists.
+		.children {
+			list-style  :  none;
+			margin-left : 0;
+		}
+	}
+
+	// Individual items.
+	&__item { clear : both; }
+
+	// Item metadata.
+	&__meta {
+		@extend %meta;
+		margin        : 0 0 1.5rem;
+		padding       : 1.5rem;
+		border-top    : 1px solid $border_footer;
+		border-bottom : 1px solid $border_footer;
+
+		&::after { @extend %clearfix; }
+	}
+
+	// Avatars.
+	// @todo - See about adding the `.comment-avatar` class to the avatar for easier styling.
+	&__avatar {
+		float         : left;
+		width         : 50px;
+		margin-right  : 1.5rem;
+		border        : 1px solid $border_footer;
+		border-radius : 50%;
+		box-sizing    : border-box;
+	}
+
+	// Author.
+	// @todo - Change link classes.
+	&__author {
+		display     : inline-block;
+		font-family : $font_secondary;
+		font-size   : 16px;
+		font-style  : normal;
+		font-weight : 700;
+
+		a { color: $gray_charcoal; }
+	}
+
+	&__avatar + &__author { margin-top : 4px; }
+
+	// Content.
+	&__content {
+		@include content_typography();
+		clear    : both;
+		overflow : hidden;
+		padding  : 0 1.5rem;
+	}
+}
+
+.depth-1 > .children .thread__meta { padding-left : 4rem; }
+
+.depth-1 > .children .thread__content { padding-left: 4rem; }

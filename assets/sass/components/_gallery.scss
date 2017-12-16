@@ -1,0 +1,140 @@
+/**
+ * Cleaner Gallery Stylesheet
+ * @version 20150615
+ */
+
+.gallery {
+	max-width : 100%;
+	display   : block;
+	clear     : both;
+	margin    : 1.414em 0 0;
+
+	&::after {
+		content    : ".";
+		display    : block;
+		height     : 0;
+		clear      : both;
+		visibility : hidden;
+	}
+
+	&-item {
+		width      : 100%;
+		padding    : 0;
+		text-align : center;
+		list-style : none;
+		border     : none;
+		background : transparent;
+		box-sizing : border-box;
+	}
+
+	&-icon {
+
+		img {
+			width      : auto;
+			max-width  : 100%;
+			height     : auto;
+			margin     : 0 auto;
+			box-sizing : border-box;
+		}
+	}
+
+	&-type-circle img {
+		border-radius : 50%;
+	}
+
+	&-caption {
+		margin     : 5px 0 0;
+		box-sizing : border-box;
+		color      : $gray_jumbo;
+
+		a { color : $gray_jumbo; }
+	}
+
+	// When the screen width is at least 480px.
+	@media only screen and ( min-width: 480px ) {
+
+		&-item {
+			float  : left;
+			margin : 0 5% 5px 0;
+		}
+
+		// Everything should be 2 columns.
+		&-col-2 .gallery-item,
+		&-col-3 .gallery-item,
+		&-col-4 .gallery-item,
+		&-col-5 .gallery-item { width : 45%; }
+	}
+
+	// When the screen width is between 480px and 539px.
+	@media only screen and ( min-width: 480px ) and ( max-width: 539px ) {
+
+		&-item:nth-of-type( 2n + 1 ) { clear : both; }
+
+		&-item:nth-child( 2n ) { margin-right : 0; float : right; }
+	}
+
+	// When the screen width is between 540px and 639px.
+	@media only screen and ( min-width: 540px ) and ( max-width: 639px ) {
+
+		&-col-3  .gallery-item:nth-child( 3n + 1 ),
+		&-col-4  .gallery-item:nth-child( 3n + 1 ),
+		&-col-5  .gallery-item:nth-child( 3n + 1 ) { clear : both; }
+
+		&-col-3  .gallery-item:nth-child( 3n ),
+		&-col-4  .gallery-item:nth-child( 3n ),
+		&-col-5  .gallery-item:nth-child( 3n ) {
+			float       : right;
+			margin-left : 0;
+			margin-right: 0;
+		}
+
+		// Handle the columns.
+		&-col-3 .gallery-item,
+		&-col-4  .gallery-item,
+		&-col-5  .gallery-item { width: 30%;   }
+	}
+
+	// When the screen width is between 640px and 767px.
+	@media only screen and ( min-width: 640px ) and ( max-width: 767px ) {
+
+		&-col-2  .gallery-item:nth-child( 2n + 1 ),
+		&-col-3  .gallery-item:nth-child( 3n + 1 ),
+		&-col-4  .gallery-item:nth-child( 4n + 1 ),
+		&-col-5  .gallery-item:nth-child( 4n + 1 ) { clear: both; }
+
+		&-col-2  .gallery-item:nth-child( 2n ),
+		&-col-3  .gallery-item:nth-child( 3n ),
+		&-col-4  .gallery-item:nth-child( 4n ),
+		&-col-5  .gallery-item:nth-child( 4n ) {
+			float       : right;
+			margin-left : 0;
+			margin-right: 0;
+		}
+
+		/* Handle the columns. */
+		&-col-2 .gallery-item  { width : 45%; }
+		&-col-3 .gallery-item  { width : 30%; }
+		&-col-4 .gallery-item,
+		&-col-5 .gallery-item { width : 21.25%;   }
+	}
+
+	// When the screen width is at least 768px.
+	@media only screen and ( min-width: 768px ) {
+
+		&-col-2  .gallery-item:nth-child( 2n  + 1 ),
+		&-col-3  .gallery-item:nth-child( 3n  + 1 ),
+		&-col-4  .gallery-item:nth-child( 4n  + 1 ),
+		&-col-5  .gallery-item:nth-child( 5n  + 1 ) { clear : both; }
+
+		&-col-2  .gallery-item:nth-child( 2n  ),
+		&-col-3  .gallery-item:nth-child( 3n  ),
+		&-col-4  .gallery-item:nth-child( 4n  ),
+		&-col-5  .gallery-item:nth-child( 5n  ) { margin-left : 0; margin-right : 0; }
+
+		// Handle the columns.
+		&-col-2 .gallery-item  { width : 45%;    }
+		&-col-3 .gallery-item  { width : 30%;    }
+		&-col-4 .gallery-item  { width : 21.25%; }
+		&-col-5 .gallery-item  { width : 16%;    }
+	}
+}

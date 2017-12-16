@@ -1,0 +1,8 @@
+/* === Clearing Floats === */
+
+.clearfix,
+.site__content::after,
+.posts-list::after,
+.entry::after,
+.archive-header::after,
+.site-header::after { @extend %clearfix; }

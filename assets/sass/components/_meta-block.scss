@@ -1,0 +1,23 @@
+/**
+ * This is a generic metadata block for themes, plugins, pages,
+ * and other projects that need a container for buttons and
+ * meta.  This is generally used after a description but can
+ * be independent.
+ */
+
+// Wrapping element.
+.meta-block {
+	margin     : 0 0 3rem;
+	text-align : center;
+
+	// Wrapper for one or more buttons.
+	// Note that the button is its own, separate component.
+	&__buttons {
+		margin-bottom : 0.75rem;
+
+		.button { margin-bottom : 0.75rem; }
+	}
+
+	// Metadata text.
+	&__meta { @extend %meta; }
+}

@@ -1,0 +1,17 @@
+// Ampersands.
+.amp {
+	vertical-align: bottom;
+
+	font : {
+		family : $font_tertiary;
+		size   : 1.1875em;
+		weight : 400;
+		style  : italic;
+	}
+}
+
+// Separators.
+.sep {
+	display : inline-block;
+	margin  : 0 0.75rem;
+}

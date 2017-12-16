@@ -1,0 +1,17 @@
+
+.archive-header .mb-search-form,
+.doc-search-form {
+	width     : 100%;
+	max-width : calc( 700px + 3rem );
+	margin    : 0 auto 1.5rem;
+
+	@media only screen and ( max-width : 480px ) {
+		width : calc( 100% + 3rem );
+		margin-left : -1.5rem;
+
+		input {
+			border-left-width: 0;
+			border-right-width: 0;
+		}
+	}
+}

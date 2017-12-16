@@ -1,0 +1,85 @@
+// A form block is form that's wrapped in a `<div>` (the component) and
+// is typically accompanied by a form title.  This is modeled after the
+// core WP comment form.  Ideally, we'd use fieldsets and legends to
+// handle this, but consistently handling this across browsers is not
+// great. Plus, the WP comment form already has this structure.
+
+.form-block {
+	width  : 100%;
+	margin : 0 auto 1.5rem;
+	border : 1px solid $border_footer;
+
+	.mb & { max-width : calc( 700px + 3rem ); }
+
+	// Give some top margin to form if after pagination (in the forums).
+	.pagination + & { margin-top : 1.5rem; }
+
+	@media only screen and ( max-width : 480px ) {
+		width : calc( 100% + 3rem );
+		margin-left        : -1.5rem;
+		border-left-width  : 0;
+		border-right-width : 0;
+	}
+
+	form { margin : 0 1.5rem; }
+
+	input[type="submit"] { width : 100%; }
+
+	&--has-fieldsets { border : none; padding : 0; }
+
+	&__title {
+		position      : relative;
+		margin        : 0 0 1.5rem;
+		padding       : 1.5rem;
+		font-size     : 22px;
+		text-align    : center;
+		border-bottom : 1px solid $border_footer;
+	}
+}
+
+.comment-respond {
+	@extend .form-block;
+
+	// When a reply is happening, the form is moved inside of the comment list.
+	.thread__items & {
+		width         : 100%;
+		margin        : 0;
+		border-left   : none;
+		border-right  : none;
+		border-bottom : none;
+	}
+}
+
+.comment-reply-title { @extend .form-block__title; }
+
+.mb-form-forum {
+
+	// Form inputs.
+	@media screen and ( min-width: 641px ) {
+
+		.mb-form-parent,
+		.mb-form-type,
+ 		.mb-form-status,
+		.mb-form-order {
+			width      : 50%;
+			box-sizing : border-box;
+		}
+
+		.mb-form-parent,
+ 		.mb-form-status {
+			clear         : both;
+			float         : left;
+			padding-right : 0.75rem;
+		}
+
+		.mb-form-type,
+ 		.mb-form-order {
+			float        : right;
+			padding-left : 0.75rem;
+
+			input[type="number"] { width : 100%; }
+		}
+
+		.mb-form-content { clear : both; }
+	}
+}

@@ -1,0 +1,19 @@
+/**
+ * Front page.
+ */
+
+.home.singular-page {
+
+	.site__body {
+		@include linear-gradient-bg(
+			to bottom,
+			#3D627D 0%,
+			rgba( 61, 98, 125, 0.9 ) 600px,
+			transparent 601px
+		);
+	}
+
+	.entry__title { color : $color_white; }
+
+	.entry__summary:first-of-type { color: #b2bac5; }
+}

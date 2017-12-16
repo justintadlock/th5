@@ -1,0 +1,87 @@
+
+body {
+	line-height: 1.5;
+	font-size:   1rem;
+}
+
+/* === Code === */
+
+object { margin-bottom: 1.5rem; }
+
+/* === Forms === */
+
+img {
+	max-width:       100%;
+	height:          auto;
+}
+
+img.wp-smiley,
+img.emoji {
+	display:    inline;
+	box-shadow: none;
+	max-height: 1em;
+	width:      1em;
+	margin:     0 .07em;
+	padding:    0;
+	border:     none;
+	background: transparent;
+}
+
+.gallery {
+	display:       block;
+	text-align:    center;
+	margin-bottom: 1.5rem;
+}
+
+.aligncenter,
+.alignright,
+.alignleft {
+	display: block;
+	margin:  0 auto 1.5rem;
+}
+
+	p .aligncenter,
+	p .alignright,
+	p .alignleft { margin-bottom: 0; }
+
+	@media only screen and ( min-width: 480px ) {
+
+		.alignleft {
+			float:        left;
+			margin-right: 1.5rem;
+		}
+
+		.alignright {
+			float:       right;
+			margin-left: 1.5rem;
+		}
+	}
+
+.alignnone { float: none; }
+
+.clear { clear: both; }
+
+img.alignleft,
+img.alignright { display: inline; }
+
+blockquote.alignleft,
+blockquote.alignright { width: 33%; }
+
+.wp-audio-shortcode,
+.wp-video-shortcode,
+audio,
+video,
+object,
+embed,
+iframe {
+	margin-bottom: 1.5rem;
+}
+
+.wp-audio-shortcode,
+.wp-video-shortcode,
+audio,
+video {
+	display:   block;
+}
+
+.sticky, .bypostauthor {}

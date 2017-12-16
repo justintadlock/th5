@@ -1,0 +1,38 @@
+// Used for big header/title text.
+%page_header {
+	font-size     : 3.25rem; // 52px
+	line-height   : 1.25;
+	margin-top    : 0;
+	margin-bottom : 3.5rem;
+	color         : #353535;
+	text-align    : center;
+
+	@media screen and ( max-width : 640px ) {
+		font-size : 3rem;
+	}
+}
+
+// Headings.
+h1, h2, h3, h4, h5, h6 {
+	font-family : $font_secondary;
+	font-weight : 700;
+	color       : #404040;
+}
+
+h1, h2, h3, h4 {
+	margin      : 1.414em 0 0.5em;
+	line-height : 1.2;
+}
+
+h1 { font-size : 2.25em; margin-top : 0; }
+
+h2 { font-size : 1.75em; }
+
+h3 { font-size : 1.25em; }
+
+h4,
+h5,
+h6 { font-size : 1em;  }
+
+// Big heading sometimes used.
+h2.big { @extend %page_header; }

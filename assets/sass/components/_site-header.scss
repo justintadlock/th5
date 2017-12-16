@@ -1,0 +1,66 @@
+/**
+ * Site header at the top of the page.
+ */
+.site-header {
+	vertical-align : middle;
+	background     : $blue_matisse;
+
+	// Site branding.
+	&__branding {
+		max-width   : calc( 100% - 362px ); /* menu columns */
+		line-height : 54px;
+		height      : 54px;
+		overflow    : hidden;
+		float       : left;
+
+		@media only screen and ( max-width: 880px ) {
+			max-width : calc( 100% - 84px );
+		}
+	}
+
+	// Site title.
+	&__title {
+		float          : left;
+		height         : 53px;
+		margin         : 0 0.75rem 0 1.5rem;
+		padding        : 3px 0 0;
+		vertical-align : middle;
+		font-family    : $font_secondary;
+		font-size      : 21px;
+		font-weight    : 700;
+		line-height    : 54px;
+		text-transform : uppercase;
+		box-sizing     : border-box;
+
+		a {
+			color        : $white;
+			border-color : transparent;
+
+			&:hover,
+			&:focus { border-color : rgba( 255, 255, 255, 0.5 ); }
+		}
+	}
+
+	// Site description.
+	&__description {
+		position    : absolute;
+		top         : -9999em;
+		left        : -9999em;
+		height      : 54px;
+		margin      : 0;
+		font-family : $font_tertiary;
+		font-size   : 16px;
+		font-weight : 400;
+		line-height : 54px;
+		color       : $blue_spindle;
+
+		@media only screen and ( min-width : 541px ) {
+			float          : left;
+			position       : relative;
+			top            : 0;
+			left           : 0;
+			padding        : 0;
+			vertical-align : middle;
+		}
+	}
+}

@@ -1,0 +1,44 @@
+// Icons.
+
+%icon {
+	display        : inline-block;
+	font-family    : 'icomoon-fa';
+	font-size      : 16px;
+	font-style     : normal;
+	font-weight    : normal;
+	font-variant   : normal;
+	line-height    : 1;
+	vertical-align : middle;
+
+	-webkit-font-smoothing  : antialiased;
+	-moz-osx-font-smoothing : grayscale;
+}
+
+.protected .label-password::before,
+.nav-links .prev::before,
+.nav-links .next::after { @extend %icon; }
+
+	/* Nav links */
+	.ltr .nav-links .prev::before,
+	.rtl .nav-links .next::after { content: "\f137"; font-size: 14px; margin: -3px 5px 0 0; }
+
+	.ltr .nav-links .next::after,
+	.rtl .nav-links .prev::before { content: "\f138"; font-size: 14px; margin: -3px 0 0 5px; }
+
+	.ltr .entry-terms::before { margin: -2px 5px 0 0; }
+	.rtl .entry-terms::before { margin: -2px 0 0 5px; }
+
+	.entry-terms.category::before,
+	.entry-terms.portfolio_category::before,
+	.entry-terms.download_category::before { content: '\f07c'; }
+
+	.entry-terms.post_tag::before { content: '\f02c'; }
+
+	/* Comments */
+
+	.protected .label-password::before {
+		margin-bottom: 3px;
+		padding:       0 8px;
+	}
+
+	.protected .label-password::before { content: '\f023'; }

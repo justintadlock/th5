@@ -1,0 +1,29 @@
+
+.site {
+
+	&__below-header {
+		width          : 100%;
+		margin         : 0 auto;
+		padding-bottom : 3rem;
+	}
+
+	&__body {
+		position:  relative;
+		max-width: 100%;
+		margin:    0 auto;
+		padding:   3rem 1.5rem 1.5rem;
+		font-size  : 1.125rem;
+		word-wrap  : break-word;
+		word-break : normal;
+
+		@media only screen and ( min-width: 950px ) {
+			padding-right : 3rem;
+			padding-left  : 3rem;
+		}
+	}
+
+	&__content {
+		max-width : 950px;
+		margin    : 0 auto;
+	}
+}

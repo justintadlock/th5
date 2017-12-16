@@ -1,0 +1,61 @@
+/**
+ * Links designed as buttons used throughout the site.  This is the base
+ * object, which can be extended.  Extended buttons in the HTML should have
+ * the `.button` and `.button-{$type}` classes.
+ */
+.button {
+	display     : inline-block;
+	width       : 200px;
+	padding     : 1.125rem 0;
+	font-family : $font_secondary;
+	font-size   : 1.125rem;
+	line-height : 1.125rem;
+	text-align  : center;
+	color       : $white;
+	background  : $blue_matisse;
+	border      : none;
+	box-sizing  : border-box;
+
+
+	&:hover,
+	&:focus {
+		color      : $white;
+		background : $blue_jellybean;
+		border     : none;
+	}
+
+	// Repo and download buttons.
+	&--repo,
+	&--download { margin : 0 0.25rem; }
+
+	// Repo button.
+	&--repo {
+		background : #f69600;
+
+		&:hover,
+		&:focus { background : #ffa519; }
+	}
+
+	// Purchase button.
+	&--purchase {
+		width      : 100%;
+		background : #48b282;
+
+		@media only screen and ( min-width: 580px ) {
+			max-width : 440px;
+		}
+
+		&:hover,
+		&:focus { background : #4dbf8b; }
+	}
+
+	// This class is added via JS to allow us to style the text differently
+	// than the outter button.
+	&__text {
+		@extend %transition;
+		border-bottom : 1px solid transparent;
+
+		.button:hover &,
+		.button:focus & { border-bottom-color : rgba( 255, 255, 255, 0.5 ); }
+	}
+}

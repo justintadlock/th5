@@ -1,0 +1,10 @@
+
+.mb-formatting {
+	display     : inline-block;
+        margin-left : 0.25rem;
+	font-style  : italic;
+	font-size   : 15px;
+	color       : $color_content_light;
+
+	a { font-style : normal; }
+}

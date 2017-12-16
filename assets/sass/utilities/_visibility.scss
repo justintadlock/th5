@@ -1,0 +1,12 @@
+// Helper classes that override the visibility of an element.
+
+// This should be overwritten via JS to make it show.
+.show-if-js { display : none; }
+
+// Text not shown on screen but read by screen readers.
+.screen-reader-text,
+.assistive-text {
+	position : absolute;
+	top      : -9999em;
+	left     : -9999em;
+}

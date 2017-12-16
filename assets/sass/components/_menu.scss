@@ -1,0 +1,183 @@
+/**
+ * Primary menu used in the header.
+ */
+.menu--primary {
+	float : right;
+
+	.menu__title {
+		width  : 84px;
+		height : 54px;
+		margin : 0;
+	}
+
+	.menu__button {
+		width   : 100%;
+		height  : 100%;
+		padding : 0;
+	}
+
+	.menu__icon::before {
+		@extend %icon;
+		padding         : 0 1.5rem;
+		line-height     : 54px;
+		font-size       : 24px;
+		text-decoration : none;
+	}
+
+	.menu__button--selected .menu__icon::before { content : '\f00d'; }
+
+	.menu__items {
+		list-style : none;
+		margin     : 0;
+	}
+
+	.menu__item {
+		font-size   : 16px;
+		font-family : $font_secondary;
+	}
+
+ 	.menu__anchor {
+		color : $color_white;
+
+		&:hover,
+		&:focus {
+			background      : rgba( 255, 255, 255, 0.05 );
+			text-decoration : none;
+
+			.menu__anchor-text { border-color : rgba( 255, 255, 255, 0.5 ); }
+		}
+
+		&::before { @extend %icon; }
+	}
+
+	.menu__item--active .menu__anchor {
+		background : rgba( 255, 255, 255, 0.05 );
+	}
+
+	.menu__anchor-text {
+		@extend %transition;
+		border-bottom : 1px solid transparent;
+	}
+}
+
+@media only screen and ( min-width : 1025px ) {
+
+	.menu--primary {
+
+		.menu__title { display : none; }
+
+	 	.menu__item { display : inline-block; }
+
+		.menu__anchor {
+			display        : block;
+			height         : 54px;
+			padding        : 1px 1.5rem 0;
+			line-height    : 54px;
+			border         : none;
+			box-sizing     : border-box;
+			vertical-align : middle;
+		}
+	}
+}
+
+@media only screen and ( max-width : 1024px ) {
+
+	// Note: transition jumps when coming back in due to the position.
+	.site__below-header {
+		position   : relative;
+		transition : normal;
+	}
+
+	.menu-open {
+		overflow-y: scroll;
+		width:      100%;
+
+		.site__below-header {
+			position: fixed;
+			z-index:  90;
+			height:   100%;
+			left:     0;
+			right:    0;
+		}
+
+		.site__overlay {
+			width:    100%;
+			height:   100%;
+			z-index:  90;
+			position: absolute;
+			background : rgba( 255, 255, 255, 0.75 );
+		}
+	}
+
+	.menu--primary {
+		position : relative;
+
+		.menu__button {
+			border-left : 1px solid transparent;
+
+			&--selected {
+				border-color : rgba( 255, 255, 255, 0.05 );
+			}
+		}
+
+		.menu__items {
+			display    : block;
+			visibility : hidden;
+			position   : fixed;
+			top        : 54px;
+			right      : -50vw;
+			z-index    : 999999;
+			overflow-y : auto;
+			width      : 50vw;
+			height     : 100%;
+			transition : all .4s ease-in-out 0s;
+			background : $color_dark;
+			border-top : 1px solid rgba( 255, 255, 255, 0.05 );
+
+			.admin-bar & { top: 86px; }
+
+	 		&--visible {
+				visibility : visible;
+				right      : 0;
+			}
+		}
+
+		.menu__anchor {
+			display       : block;
+			padding       : 1rem 1.5rem;
+			border-bottom : 1px solid rgba( 255, 255, 255, 0.05 );
+
+			&::before {
+				display       : inline-block;
+				margin-top    : -3px;
+				padding-left  : 0;
+				padding-right : 0.75rem;
+				color         : #c6d4e1;
+			}
+
+			&[href*="plugins"]::before     { content : '\f1e6'; }
+			&[href*="themes"]::before      { content : '\f1fc'; }
+			&[href*="hybrid-core"]::before { content : '\f085'; }
+			&[href*="board"]::before       { content : '\f1cd'; }
+			&[href*="blog"]::before        { content : '\f040'; }
+			&[href*="club"]::before,
+	        	&[href*="account"]::before,
+			&[href*="login"]::before      { content : '\f007'; }
+		}
+	}
+}
+
+@media screen and ( max-width : 782px ) {
+
+	.admin-bar .menu--primary .menu__items { top: 100px; }
+}
+
+@media only screen and ( max-width : 540px ) {
+
+	.menu--primary .menu__items {
+		width : 100%;
+		right : -100%;
+
+		&--visible { right : 0; }
+	}
+}

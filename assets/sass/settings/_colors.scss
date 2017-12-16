@@ -1,0 +1,48 @@
+// Colors.
+// @todo Come up with a better naming system.
+
+// Whites.
+$white : #fff;
+
+// Blues.
+$blue_cello     : #375160;
+$blue_matisse   : #3D627D; // Main blue.
+$blue_jellybean : #436C8A;
+$blue_heather   : #b2bac5;
+$blue_spindle   : #c6d4e1;
+
+// Grays.
+$gray_nightrider : #333;
+$gray_charcoal   : #404040;
+$gray_ironside   : #71706C; // Main text color.
+$gray_jumbo      : #898981;
+$gray_zumthor    : #CED3D6;
+$gray_wan_white  : #ebeae6;
+$gray_alabaster  : #f1eee5;
+
+/* ====== */
+
+$color_dark : $blue_matisse;
+$color_dark_lighter : $blue_jellybean;
+$color_dark_darker : $blue_cello;
+
+$color_text : $gray_ironside;
+$color_text_dark : $gray_nightrider;
+
+$color_content_light : $gray_jumbo;
+
+//$site_description : $blue_spindle;
+
+$color_white  : $white;
+
+// color front-page entry-summary
+$color_footer : $blue_heather;
+
+// Also: link border-bottom. comments
+$border_footer : $gray_zumthor;
+
+// Quotes.
+$color_quote_full : rgba( 61, 98, 125, 0.45 );
+
+// Backgrounds.
+$bg_light : $gray_wan_white;

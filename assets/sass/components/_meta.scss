@@ -1,0 +1,12 @@
+// Used for post meta, byline, utility, etc.
+%meta {
+	font-size : 16px;
+	color     : $gray_jumbo;
+
+	a {
+		color : inherit;
+
+		&:hover,
+		&:focus { color : $blue_matisse; }
+	}
+}

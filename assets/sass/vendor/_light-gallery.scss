@@ -1,0 +1,20 @@
+// Custom styles for the Light Gallery plugin.
+// Its main styles are loaded separately.
+
+.lg-outer {
+	a,
+	button {
+		text-decoration : none;
+		border          : none;
+	}
+}
+
+.admin-bar .lg-outer { // Yes, this is supposed to be misspelled.
+	top : 32px !important;
+	height : calc( 100% - 32px ) !important;
+
+	@media screen and ( max-width : 782px ) {
+		top : 46px !important;
+		height : calc( 100% - 46px ) !important;
+	}
+}

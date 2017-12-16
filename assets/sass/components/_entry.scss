@@ -1,0 +1,161 @@
+// Post, page, etc. wrapping element.
+.entry {
+	clear : both;
+
+	// 2-column layout used on plural pages.
+	@media only screen and ( min-width : 640px ) {
+
+		&--odd,
+		&--even { width : calc( 50% - 20px ); }
+
+		&--odd { float : left; }
+
+		&--even {
+			clear : none;
+			float : right;
+		}
+	}
+
+	// 3-column layout used on plural pages.
+	@media only screen and ( min-width : 950px ) {
+
+		&--one,
+		&--two,
+		&--three { width : calc( 33.33% - 42.666px ); }
+
+		&--one {
+			clear : both;
+			float : left;
+		}
+
+		&--two {
+			clear        : none;
+			float        : left;
+			margin-left  : 64px;
+			margin-right : 64px;
+		}
+
+		&--three {
+			clear : none;
+			float : right;
+		}
+	}
+
+	// Entry header.
+	&__header { text-align : center; }
+
+	// Entry title.
+	&__title {
+
+		// Linked entry titles.
+		a {
+			color        : #404040;
+			border-color : transparent;
+
+			&:hover,
+			&:focus { border-color : #404040; }
+		}
+
+		.singular & {
+			@extend %page_header;
+		}
+
+		.plural & {
+			margin    : 1.375rem 0 1.5rem 0;
+			font-size : 1.5rem;
+
+			@media only screen and ( min-width: 640px ) {
+				font-size: 1.25rem;
+			}
+		}
+
+		@media only screen and ( min-width : 950px ) {
+			--one &,
+			--two &,
+			--three & { font-size : 1.0625rem; }
+		}
+	}
+
+	// Post byline.
+	&__byline {
+		@extend %meta;
+
+		.singular & {
+			margin-top    : -3.25rem;
+			margin-bottom : 2.25rem;
+		}
+
+	 	.plural & {
+			margin-top    : -1.25rem;
+			margin-bottom : 1.5rem;
+		}
+	}
+
+	// Entry footer.
+	&__footer {
+		@extend %meta;
+		margin-bottom : 1.5rem;
+		text-align    : center;
+	}
+
+	// Taxonomy terms, generally displayed in the entry footer.
+	&__terms { display : inline-block; }
+
+	// Entry summary.
+	&__summary {
+		.singular & { @extend %p_one; }
+
+		// Primarily used on theme/plugin pages where we have a featured image
+		// added at the top of the page.
+		@media only screen and ( min-width : 1024px ) {
+
+			.singular .has-post-thumbnail & {
+				margin-top    : -2.5rem;
+				margin-bottom : 1.5rem;
+				font-size     : 1.25rem;
+				font-style    : normal;
+			}
+		}
+	}
+
+	// Entry content.
+	&__content {
+		@include content_typography();
+	  	clear : both;
+
+		.singular-post &,
+		.layout-1c-narrow & {
+			margin      : 0 auto;
+			max-width   : 700px;
+			line-height : 1.618;
+		}
+	}
+}
+
+// No comments / comments off  The comments link is a `<span>`
+// rather than an `<a>` when it's off.
+span.entry__comments-link { display: none; }
+
+// Post featured media.
+.singular-theme img.full,
+.singular-plugin img.full { margin-bottom: 3rem; }
+
+@media only screen and ( max-width : 1024px ) {
+
+	.singular-theme .alignright,
+ 	.singular-plugin .alignright {
+		margin-left : 0;
+		float       : none;
+		max-width   : 100%;
+	}
+}
+
+// Theme/Plugin content area.
+.layout-1c-wide .entry__content h2 {
+	text-align : center;
+
+	+ p { @extend %p_two; }
+}
+
+.singular-theme .entry + h2,
+.singular-plugin .entry + h2 { margin-top : 1.414em; }

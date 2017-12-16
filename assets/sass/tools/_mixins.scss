@@ -1,0 +1,34 @@
+// Mixins.
+
+ @mixin content_typography {
+ 	font-size   : 1.125rem;
+ }
+
+@mixin minwidth( $width ) {
+	@media ( min-width : #{$width} ) {
+		@content;
+	}
+}
+
+@mixin linear-gradient-bg( $direction, $color-stops... ) {
+
+	background-image : -webkit-linear-gradient( $direction, $color-stops );
+	background-image :    -moz-linear-gradient( $direction, $color-stops );
+	background-image :      -o-linear-gradient( $direction, $color-stops );
+	background-image :         linear-gradient( $direction, $color-stops );
+}
+
+@mixin background-size( $size... ) {
+
+	-webkit-background-size : $size;
+	   -moz-background-size : $size;
+	        background-size : $size;
+}
+
+@mixin transition( $transition ) {
+
+	-webkit-transition  : $transition;
+	   -moz-transition  : $transition;
+	      -o-transition : $transition;
+	        transition  : $transition;
+}
