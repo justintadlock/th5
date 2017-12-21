@@ -102,7 +102,7 @@ function th5_get_theme_layout( $layout ) {
 }
 
 
-add_filter( 'toot_testimonial_shortcode', 'th5_testimonial_shortcode', 10, 2 );
+//add_filter( 'toot_testimonial_shortcode', 'th5_testimonial_shortcode', 10, 2 );
 
 function th5_testimonial_shortcode( $html, $attr = array() ) {
 
