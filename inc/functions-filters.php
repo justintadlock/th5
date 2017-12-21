@@ -61,6 +61,31 @@ function th5_navigation_markup_template( $template ) {
 		</nav>';
 }
 
+add_action( 'wp_head', 'th5_seo_generator', 1 );
+
+function th5_seo_generator() {
+
+	if ( ! is_singular() )
+		return;
+
+	$_keywords = $_description = $_image = '';
+
+	$description = get_post_field( 'post_excerpt', get_queried_object_id() );
+	$keywords    = get_post_meta( get_queried_object_id(), 'keywords', true );
+	$image       = get_the_post_thumbnail_url( get_queried_object_id(), 'extant-landscape-2x' );
+
+	if ( $description )
+		$_description = sprintf( '<meta name="description" content="%s" />' . "\n", esc_attr( $description ) );
+
+	if ( $keywords )
+		$_keywords = sprintf( '<meta name="keywords" content="%s" />' . "\n", esc_attr( $keywords ) );
+
+	if ( $image )
+		$_image = sprintf( '<meta property="og:image" content="%s" />' . "\n", esc_url( $image ) );
+
+	echo $_description . $_keywords . $_image;
+}
+
 function extant_nav_menu_css_class( $classes ) {
 
 	$_classes[] = 'menu__item';
